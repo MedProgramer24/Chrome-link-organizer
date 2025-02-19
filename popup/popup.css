@@ -69,15 +69,40 @@ button:hover {
 #savedLinksPage {
   display: none;
 }
+/* Scrollbar Track */
+ul::-webkit-scrollbar {
+  width: 8px; /* Adjust width */
+}
+
+/* Scrollbar Thumb (Draggable part) */
+ul::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Blue color */
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+ul::-webkit-scrollbar-thumb:hover {
+  background-color: #007bff; /* Darker blue on hover */
+}
+
+/* Scrollbar Track */
+ul::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #f1f1f1; /* Light background */
+}
+
 
 ul {
   display: grid;
   gap: 8px;
   margin-bottom: 23px;
   margin-top: 15px;
-  grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
   list-style-type: none;
-  padding-left: 0;
+  padding-left: 5px;
+  max-height: 290px;
+  overflow: auto;
 }
 
 .link-item {
