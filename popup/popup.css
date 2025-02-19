@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border-radius: 12px;
+  padding: 24px;
+  width: 379px;
+  font-family: "Arial", sans-serif;
+  background-color: #1b1b1b;
+  height: 241px;
+  color: #ffffff;
+}
+.logo {
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.container {
+  width: 338px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+h2,
+h3 {
+  font-size: large;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background-color: #1b1b1b;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#savedLinksPage {
+  display: none;
+}
+
+ul {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 23px;
+  margin-top: 15px;
+  grid-template-columns: repeat(4, 1fr); /* Create 4 equal columns */
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.link-item {
+  width: 69px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 12px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.link-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.link-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favicon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+li .link-details strong {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.category {
+  font-size: 14px;
+  color: #777;
+}
+
+.open-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  left: 7px;
+}
+
+.open-link:hover {
+  text-decoration: underline;
+}
+
+/* .delete-btn {
+  width: 90px;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+} */
+
+.delete-btn:hover {
+  background-color: #e60000;
+}
+
+.backBtn {
+  width: 90px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #007bff;
+}
+.modal {
+  display: none; /* Hide modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 31px;
+  margin: 22px;
+  width: 85%;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
+#editTitle {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.three-dots {
+  right: -7px;
+  cursor: pointer;
+  font-size: large;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  top: -23px;
+}
+
+#deleteLinkBtn,
+#saveEditBtn {
+  width: 87px;
+  margin-right: 4px;
+}
+#closeModalBtn {
+  width: 87px;
+}
+.top {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
