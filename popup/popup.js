@@ -7,21 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const linkNameInput = document.getElementById("linkName");
   const categorySelect = document.getElementById("category");
   const linksList = document.getElementById("linksList");
-  const searchInput = document.getElementById("searchInput"); // Added search input
+  const searchInput = document.getElementById("searchInput"); 
   const modal = document.getElementById("editModal");
   const editTitle = document.getElementById("editTitle");
   const saveEditBtn = document.getElementById("saveEditBtn");
   const deleteLinkBtn = document.getElementById("deleteLinkBtn");
   const closeModalBtn = document.getElementById("closeModalBtn");
 
-  // Show saved links page if links exist
   chrome.storage.local.get({ links: [] }, (result) => {
     if (result.links.length > 0) {
       showSavedLinksPage();
     }
   });
 
-  // Save link with name, URL, category, and favicon
+  
   saveBtn.addEventListener("click", () => {
     var name = linkNameInput.value.trim() || "Untitled";
     if (name.length > 9) {
@@ -44,15 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Render saved links with optional category filter
   function renderLinks(filterCategory = "") {
     chrome.storage.local.get({ links: [] }, (result) => {
       linksList.innerHTML = "";
-
+  
       const filteredLinks = result.links.filter((link) =>
         link.category.toLowerCase().includes(filterCategory.toLowerCase())
       );
-
+  
       filteredLinks.forEach((link, index) => {
         const item = document.createElement("li");
         item.classList.add("link-item");
@@ -60,20 +58,26 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="link-info">
             <div class="image-fav">
               <a href="${link.url}" target="_blank" class="open-link">
-                <img src="${link.favicon}" alt="Favicon" class="favicon" />
+                <img id="favicon-${index}" src="${link.favicon}" alt="Favicon" class="favicon" />
               </a>
               <span class="three-dots" data-index="${index}">...</span>
             </div>
             <div class="link-details">
               <strong>${link.name}</strong>
-
             </div>
           </div>
         `;
         linksList.appendChild(item);
+  
+        const img = document.getElementById(`favicon-${index}`);
+        img.onerror = function () {
+          this.src = "../icons/default-favicon.png"; 
+        };
       });
     });
   }
+  
+  
 
   // Show modal for editing or deleting the link
   function showModal(index) {
