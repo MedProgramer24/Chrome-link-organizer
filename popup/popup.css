@@ -106,9 +106,9 @@ ul {
 }
 
 .link-item {
-  width: 69px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 5px;
   padding: 12px;
   background-color: #333;
