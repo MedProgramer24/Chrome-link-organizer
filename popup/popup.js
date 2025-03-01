@@ -141,3 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     formPage.style.display = "block";
   });
 });
+// Donate Button - Redirect to your donation page
+donateButton.addEventListener("click", () => {
+  window.open("https://buymeacoffee.com/medsolutech", "_blank");
+});

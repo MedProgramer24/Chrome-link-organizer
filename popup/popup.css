@@ -241,3 +241,21 @@ input::placeholder {
   gap: 30px;
   justify-content: space-between;
 }
+.donate-btn {
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.donate-btn:hover {
+  background-color: #ffdb4d;
+}
